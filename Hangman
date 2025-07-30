@@ -1,0 +1,97 @@
+import random
+hangman_stanges = ['''
+
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+        ''']
+
+words = ["good", "ugly", "bad"]
+secret_word = random.choice(words)
+spaced_word = "_".join(secret_word)
+
+print(spaced_word)
+chances = 6
+guessed_letters = []
+print("hangman_stages[0]") 
+
+while "_" in spaced and chances > 0:
+    guess = input("please guess a letter: ").lower()
+    
+    if guessed in guessed_letters:
+        print("you aleardy guessed that.try again")
+        print("you have {chances}more tries")        
+        
+        continue 
+    guessed_letters.append(guessed)
+    if guessed not in random_word:
+        chances -= 1  
+        print(hangman_stages[6 - chances])   
+    else:
+        for position in rang (len(random_word)):
+            if random_word [position] == guessed:
+                spaced_word [position] = guessed 
+    print(''.join(spaced_word))
+    print(f"you have{chances}more tries")    
+if chances == 0:
+    print("""
+         *********
+         you lose!
+         *********
+               """)
+    
+    print(hangman_stages[-1])        
+else:
+    print("""
+          *******
+          you win!
+          *******   
+                """)
+ 
+                                            
